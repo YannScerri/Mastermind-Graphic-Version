@@ -1,0 +1,12 @@
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).exe.config
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).exe
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).pdb
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.AssemblyReference.cache
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.SuggestedBindingRedirects.cache
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Properties.Resources.resources
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.GenerateResource.cache
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.CoreCompileInputs.cache
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).exe
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).pdb
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Menu.resources
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Rules.resources
