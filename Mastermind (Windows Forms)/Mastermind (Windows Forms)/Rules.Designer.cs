@@ -35,6 +35,7 @@
             // 
             // rtxtboxRules
             // 
+            this.rtxtboxRules.BackColor = System.Drawing.Color.Lavender;
             this.rtxtboxRules.Font = new System.Drawing.Font("Javanese Text", 13F);
             this.rtxtboxRules.Location = new System.Drawing.Point(91, 37);
             this.rtxtboxRules.Name = "rtxtboxRules";
@@ -45,18 +46,20 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.Lavender;
             this.btnReturn.Location = new System.Drawing.Point(12, 26);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(69, 42);
             this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Retour";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // Rules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.rtxtboxRules);

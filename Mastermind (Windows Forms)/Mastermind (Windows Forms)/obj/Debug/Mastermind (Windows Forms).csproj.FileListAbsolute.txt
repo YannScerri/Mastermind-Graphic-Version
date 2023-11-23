@@ -10,3 +10,4 @@ D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\De
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).pdb
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Menu.resources
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Rules.resources
+D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Game.resources

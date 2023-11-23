@@ -43,5 +43,13 @@ namespace Mastermind__Windows_Forms_
             
 
         }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            Game gameScreen = new Game();
+
+            gameScreen.Show();
+            this.Hide();
+        }
     }
 }
