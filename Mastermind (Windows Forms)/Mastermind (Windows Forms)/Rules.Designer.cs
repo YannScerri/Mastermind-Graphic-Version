@@ -63,6 +63,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.rtxtboxRules);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Rules";
             this.RightToLeftLayout = true;
             this.Text = "Règles";
