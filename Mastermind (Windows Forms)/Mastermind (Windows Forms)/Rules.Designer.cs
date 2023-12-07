@@ -36,6 +36,7 @@
             // rtxtboxRules
             // 
             this.rtxtboxRules.BackColor = System.Drawing.Color.Lavender;
+            this.rtxtboxRules.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.rtxtboxRules.Font = new System.Drawing.Font("Javanese Text", 13F);
             this.rtxtboxRules.Location = new System.Drawing.Point(91, 37);
             this.rtxtboxRules.Name = "rtxtboxRules";

@@ -12,12 +12,16 @@ using System.Windows.Forms;
 namespace Mastermind__Windows_Forms_
 {
     public partial class Game : Form
-    {   List <Button> btnList = new List <Button> ();
+    {
+        Menu mainMenu;
+        List <Button> btnList = new List <Button> ();
         int currentButton = 0;
-
-        public Game()
-        {
-            InitializeComponent();   
+        Button[] selectedColors = new Button[4];
+        public Game(Menu menu)
+        {   
+            InitializeComponent();
+            CombinationCreator();
+            mainMenu = menu;
         }
 
         private void availableColor1_Click(object sender, EventArgs e)
@@ -59,5 +63,55 @@ namespace Mastermind__Windows_Forms_
         {
             Application.Exit();
         }
-    }
+
+        private void CombinationCreator()
+        {   
+            List <Color> availableColors = new List <Color>
+            {
+                Color.Green,
+                Color.Yellow,
+                Color.White,
+                Color.Red,
+                Color.Blue,
+                Color.Magenta,
+                Color.Cyan,
+
+            };
+            
+            Random random = new Random();
+            for(int i = 0; i < 4; i++)
+            {
+                Color randomColor = availableColors[random.Next(availableColors.Count)];
+                Button btnCombination = new Button();
+                btnCombination.BackColor = randomColor;
+                btnCombination.Enabled = false;
+                btnCombination.FlatStyle = FlatStyle.Flat;
+                btnCombination.Size = new Size (50,50);
+                pnlCombination.Controls.Add(btnCombination);
+
+                selectedColors[i] = btnCombination;
+            }
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            pnlCombination.Visible = !pnlCombination.Visible;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            // Effacer les boutons existants dans pnlCombination
+            pnlCombination.Controls.Clear();
+
+            // Générer une nouvelle combinaison
+            CombinationCreator();
+        }
+
+        private void btnReturn2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainMenu.Show();
+        }
+    }   
+
 }

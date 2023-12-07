@@ -29,16 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.lblName = new System.Windows.Forms.Label();
             this.lblmenu = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
-            this.btnRules = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.btnRules = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Calibri", 16F);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(482, 531);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(171, 27);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "Yann Scerri - FIN1";
             // 
             // lblmenu
             // 
@@ -68,20 +81,6 @@
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
-            // btnRules
-            // 
-            this.btnRules.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRules.BackColor = System.Drawing.Color.Lavender;
-            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRules.Location = new System.Drawing.Point(287, 283);
-            this.btnRules.Name = "btnRules";
-            this.btnRules.Size = new System.Drawing.Size(562, 60);
-            this.btnRules.TabIndex = 2;
-            this.btnRules.Text = "Règles";
-            this.btnRules.UseVisualStyleBackColor = false;
-            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
-            // 
             // btnQuit
             // 
             this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -95,6 +94,20 @@
             this.btnQuit.Text = "Quitter";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // btnRules
+            // 
+            this.btnRules.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRules.BackColor = System.Drawing.Color.Lavender;
+            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRules.Location = new System.Drawing.Point(287, 283);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(562, 60);
+            this.btnRules.TabIndex = 2;
+            this.btnRules.Text = "Règles";
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -125,25 +138,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1136, 660);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // lblName
-            // 
-            this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Calibri", 16F);
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(482, 531);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(171, 27);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Yann Scerri - FIN1";
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 465);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 465);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 159);
+            this.pictureBox1.Size = new System.Drawing.Size(262, 159);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -168,12 +169,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblmenu;
         private System.Windows.Forms.Button btnPlay;
-        private System.Windows.Forms.Button btnRules;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Button btnRules;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
