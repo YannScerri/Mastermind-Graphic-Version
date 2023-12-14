@@ -19,37 +19,43 @@ namespace Mastermind__Windows_Forms_
             rules = new Rules(this);
         }
 
-        private void lblmenu_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Bouton quitter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {   
             //Pour quitter l'application
             Application.Exit();
         }
-
+        /// <summary>
+        /// Bouton règles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRules_Click(object sender, EventArgs e)
-        {
+        {   //cacher le menu et faire apparaître les règles
             this.Hide();
-
             rules.Show();
-            
-
         }
-
-        private void btnPlay_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Bouton jouer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+          private void btnPlay_Click(object sender, EventArgs e)
         {
             Game gameScreen = new Game(this);
-
+            //cacher le menu et afficher les règles
             gameScreen.Show();
             this.Hide();
         }
     }
-}
+}  
+
+            
+
+
+        

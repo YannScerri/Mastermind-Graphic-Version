@@ -65,7 +65,6 @@
             this.lblmenu.Size = new System.Drawing.Size(352, 62);
             this.lblmenu.TabIndex = 0;
             this.lblmenu.Text = "MENU DU MASTERMIND";
-            this.lblmenu.Click += new System.EventHandler(this.lblmenu_Click);
             // 
             // btnPlay
             // 
@@ -159,7 +158,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Menu";
             this.Text = "Mastermind";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

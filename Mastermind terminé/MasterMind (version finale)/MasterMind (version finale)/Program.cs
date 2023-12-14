@@ -179,8 +179,58 @@ namespace Projet_Mastermind
                                 }
                             }
 
-                            // Donner des indications au joueur
-                            Console.WriteLine($"\nCouleurs correctes : {correctColor}");
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (userInput[i] != combinaison[i] && combinaison.Contains(userInput[i].ToString()))
+                            {
+                                switch (combinaison[i])
+                                {
+                                    case 'G':
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        break;
+                                    case 'Y':
+                                        Console.ForegroundColor = ConsoleColor.Yellow;
+                                        break;
+                                    case 'W':
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        break;
+                                    case 'R':
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        break;
+                                    case 'B':
+                                        Console.ForegroundColor = ConsoleColor.Blue;
+                                        break;
+                                    case 'M':
+                                        Console.ForegroundColor = ConsoleColor.Magenta;
+                                        break;
+                                    case 'C':
+                                        Console.ForegroundColor = ConsoleColor.Cyan;
+                                        break;
+                                }
+                                Console.Write(userInput[i]);
+                                Console.ResetColor();
+                                correctColor++;
+                            }
+
+                            else if (userInput[i] != combinaison[i])
+                            {
+                                Console.Write("_");
+                            }
+                            else if (combinaison.Contains(userInput[i].ToString()))
+                            {
+                                wrongPlace++;
+                            }
+
+                            else if (attempts == 9)
+                            {
+                                Console.WriteLine("Dommage, vous avez perdu. Le code était " + combinaison);
+                            }
+
+                        }
+
+
+                        // Donner des indications au joueur
+                        Console.WriteLine($"\nCouleurs correctes : {correctColor}");
                             Console.WriteLine($"Couleurs au mauvais endroit : {wrongPlace}");
                         }
                     }

@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="rtxtboxRules.Text" xml:space="preserve">
-    <value>Le but est de découvrir la combinaison de couleurs créée par l'ordinateur. Pour cela, vous disposez de 10 essais pour choisir au fur et à mesure les bonnes couleurs et trouver leur place. L'ordinateur me donne des indices pour savoir si j'ai trouvé une bonne couleur (bien ou mal placée).
+    <value>Le but est de découvrir la combinaison de couleurs créée par l'ordinateur. Pour cela, vous disposez de 10 essais pour choisir au fur et à mesure les bonnes couleurs et trouver leur place. L'ordinateur vous donne des indices pour savoir si vous avez identifié une bonne couleur (bien placée ou non).
 
-Les couleurs disponibles sont : Vert, Blanc, Jaune, Rouge, Bleu, Magenta, Cyan</value>
+Les couleurs disponibles sont : Vert, Blanc, Jaune, Rouge, Bleu, Magenta, Cyan.
+
+Bonne chance !
+</value>
   </data>
 </root>

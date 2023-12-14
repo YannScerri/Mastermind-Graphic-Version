@@ -18,15 +18,19 @@ namespace Mastermind__Windows_Forms_
             InitializeComponent();
             mainMenu = menu;
         }
-
+        /// <summary>
+        /// bouton retour au menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
-         
-            
-
-            // Afficher à nouveau Form1
+            //cacher les règles et revenir au menu
             this.Hide();
             mainMenu.Show();
         }
     }
 }
+         
+            
+
