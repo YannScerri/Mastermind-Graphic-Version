@@ -15,7 +15,10 @@ namespace Mastermind__Windows_Forms_
     {
         Menu mainMenu;
         //liste, variable et tableau pour la génération aléatoire
-        Button[,] btnGrid = new Button[ROWS,COLUMNS];
+        int currentColumn = 0;
+        int currentRow = 0;
+        Label [,] lblGrid;
+        Label currentLbl;
         const int COLUMNS = 4;
         const int ROWS = 10;
         List <Button> btnList = new List <Button> ();
@@ -25,42 +28,52 @@ namespace Mastermind__Windows_Forms_
         {   
             InitializeComponent();
             CombinationCreator();
+            LabelCreator();
             mainMenu = menu;
         }
+        private void LabelCreator()
+        {
+            int width = 20;
+            int height = 20;
 
+            lblGrid = new Label[ROWS, COLUMNS];
+
+            for (int i = 0; i < ROWS; i++)
+            {
+                for (int j = 0; j < COLUMNS; j++)
+                {
+                    Label playLbl = new Label();
+
+                    playLbl.BackColor = Color.Gray;
+                    playLbl.Size = new Size (width, height);
+                    playLbl.Location = new Point(j * 20 * 2, i * 20 * 2);
+                    playerPnl.Controls.Add(playLbl);
+
+                    lblGrid[i, j] = playLbl;
+                }
+            }
+
+            
+        }
         
         private void availableColor1_Click(object sender, EventArgs e)
         {   
             //ajoute l'option pour tous les boutons de couleurs
-            Button colorButton = (Button)sender;
+            Button colorButton = (Button)sender;          
 
-            // Ajoutez les boutons à la liste
-            for (int i = 1; i <= 40; i++)
-            {
-                // Créer le nom du bouton en fonction du schéma de nommage
-                string nomBouton = $"playbtn{i}";
-
-                // Récupérer le bouton par son nom
-                Button bouton = Controls.Find(nomBouton, true).FirstOrDefault() as Button;
-
-                // Ajouter le bouton à la liste
-                if (bouton != null)
-                {
-                    btnList.Add(bouton);
-                }
-            }
-
-            if (currentButton < 4)
+            if (currentColumn < 4)
             {
                 //adapter la couleur
-                btnList[currentButton].BackColor = colorButton.BackColor;
+                lblGrid[currentRow, currentColumn].BackColor = colorButton.BackColor;
+
+                currentColumn++;
             }
             else
             {
                 MessageBox.Show("Veuillez valider votre réponse");
             }
             //passage au bouton suivant
-            currentButton++;
+
             
         }
 
@@ -133,6 +146,8 @@ namespace Mastermind__Windows_Forms_
         private void Game_Load(object sender, EventArgs e)
         {   //la combinaison secrète est par défaut cachée
             pnlCombination.Visible = false;
+
+           
         }
 
         private void validateBtn_Click(object sender, EventArgs e)
