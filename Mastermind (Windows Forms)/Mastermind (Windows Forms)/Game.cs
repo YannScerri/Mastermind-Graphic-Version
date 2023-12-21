@@ -14,23 +14,45 @@ namespace Mastermind__Windows_Forms_
     public partial class Game : Form
     {
         Menu mainMenu;
-        //liste, variable et tableau pour la génération aléatoire
+        //liste, variable et tableau
         int currentColumn = 0;
         int currentRow = 0;
         Label [,] lblGrid;
-        Label currentLbl;
+        Label[,] hintGrid;
+        Button[] selectedColors;
         const int COLUMNS = 4;
         const int ROWS = 10;
-        List <Button> btnList = new List <Button> ();
-        int currentButton = 0;
-        Button[] selectedColors = new Button[4];
+        //List <Button> btnList = new List <Button> ();
+        int clickCpt = 0;
+
+        Color[] availableColors = new Color[]
+        {
+                Color.Green,
+                Color.Yellow,
+                Color.White,
+                Color.Red,
+                Color.Blue,
+                Color.Magenta,
+                Color.Cyan,
+        };
+
+
+
         public Game(Menu menu)
         {   
             InitializeComponent();
+
+            selectedColors = new Button[7];
+            hintGrid = new Label[ROWS, COLUMNS];
+
             CombinationCreator();
             LabelCreator();
+            HintCreator();
             mainMenu = menu;
+
+            validateBtn.Enabled = false;
         }
+        //méthode pour la grille de jeu
         private void LabelCreator()
         {
             int width = 20;
@@ -55,18 +77,45 @@ namespace Mastermind__Windows_Forms_
 
             
         }
-        
+
+        private void HintCreator()
+        {
+            int width = 10;
+            int height = 10;
+
+            hintGrid = new Label[ROWS, COLUMNS];
+
+            for (int i = 0; i < ROWS; i++)
+            {
+                for (int j = 0; j < COLUMNS; j++)
+                {
+                    Label hintLbl = new Label
+                    {
+                        BackColor = Color.Gray,
+                        Size = new Size(width, height),
+                        Location = new Point(j * width * 2, i * height * 4)
+                    };
+                    hintPnl.Controls.Add(hintLbl);
+
+                    hintGrid[i, j] = hintLbl;
+                }
+            }
+         }
+
+        //méthode pour que les couleurs soient cliquables
         private void availableColor1_Click(object sender, EventArgs e)
         {   
             //ajoute l'option pour tous les boutons de couleurs
-            Button colorButton = (Button)sender;          
 
-            if (currentColumn < 4)
+            if (currentColumn < COLUMNS)
             {
+                Button colorButton = (Button)sender;          
                 //adapter la couleur
                 lblGrid[currentRow, currentColumn].BackColor = colorButton.BackColor;
 
                 currentColumn++;
+
+                validateBtn.Enabled = (currentColumn == COLUMNS);
             }
             else
             {
@@ -87,27 +136,31 @@ namespace Mastermind__Windows_Forms_
         /// </summary>
         private void CombinationCreator()
         {   //liste de couleurs disponibles pour la génération aléatoire
-            List <Color> availableColors = new List <Color>
-            {
-                Color.Green,
-                Color.Yellow,
-                Color.White,
-                Color.Red,
-                Color.Blue,
-                Color.Magenta,
-                Color.Cyan,
-            
-            };
-            
+            //List <Color> availableColors = new List <Color>
+            //{
+            //    Color.Green,
+            //    Color.Yellow,
+            //    Color.White,
+            //    Color.Red,
+            //    Color.Blue,
+            //    Color.Magenta,
+            //    Color.Cyan,
+
+            //};
+
+
+
             Random random = new Random();
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < COLUMNS; i++)
             {
-                Color randomColor = availableColors[random.Next(availableColors.Count)];
-                Button btnCombination = new Button();
-                btnCombination.BackColor = randomColor;
-                btnCombination.Enabled = false;
-                btnCombination.FlatStyle = FlatStyle.Flat;
-                btnCombination.Size = new Size (50,50);
+                Color randomColor = availableColors[random.Next(availableColors.Length)];
+                Button btnCombination = new Button
+                {
+                    BackColor = randomColor,
+                    Enabled = false,
+                    FlatStyle = FlatStyle.Flat,
+                    Size = new Size(50, 50)
+                };
                 pnlCombination.Controls.Add(btnCombination);
 
                 selectedColors[i] = btnCombination;
@@ -145,53 +198,174 @@ namespace Mastermind__Windows_Forms_
 
         private void Game_Load(object sender, EventArgs e)
         {   //la combinaison secrète est par défaut cachée
-            pnlCombination.Visible = false;
-
-           
+            pnlCombination.Visible = false;                           
         }
 
         private void validateBtn_Click(object sender, EventArgs e)
         {
-            // vérifier que le joueur a rempli 4 cases
-            if (currentButton < 4)
+            CheckCode();
+            currentColumn = 0;
+
+            validateBtn.Enabled = false;
+
+            // Vérifier que le joueur a rempli 4 cases
+            //if (currentColumn < COLUMNS)
+            //{
+            //    MessageBox.Show("Veuillez sélectionner quatre couleurs avant de valider.");
+            //    return;
+            //}
+
+
+            //// Appel de méthode et comparaison
+            //bool isCorrect = CheckPlayerCombination();
+
+            //// Feedback
+            //if (isCorrect)
+            //{
+            //    MessageBox.Show("Bravo le veau ! Vous avez deviné la combinaison secrète.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("La combinaison n'est pas correcte. Essayez à nouveau.");
+            //}
+
+            //// Réinitialisation
+            //currentColumn = 0;
+            //currentRow++;
+            //if (currentRow == ROWS)
+            //{
+            //    MessageBox.Show("Vous avez atteint le nombre maximal d'essais. La combinaison secrète était : " + GetSecretCombination());
+            //    ResetGame();
+            //}
+        }
+
+        private void CheckCode()
+        {
+            int rightColor = 0;
+            int misplacedColor = 0;
+            int[] countColors = new int[availableColors.Length];
+            int[] spotColors = new int[availableColors.Length];
+
+            for (int i = 0; i < COLUMNS; i++)
             {
-                MessageBox.Show("Veuillez sélectionner quatre couleurs avant de valider.");
-                return; 
+                countColors[Array.IndexOf(availableColors, selectedColors[i].BackColor)]++;
             }
 
-            // appel de méthode et comparaison
-            bool isCorrect = CheckPlayerCombination();
-
-            // feedback
-            if (isCorrect)
+            for (int i = 0; i < COLUMNS; i++) 
             {
-                MessageBox.Show("Bravo le veau ! Vous avez deviné la combinaison secrète.");
-                
+                spotColors[Array.IndexOf(availableColors, lblGrid[currentRow, i].BackColor)]++;
             }
+
+            for(int i = 0; i < COLUMNS; i++)
+            {
+                if (lblGrid[currentRow, i].BackColor == selectedColors[i].BackColor)
+                {
+                    rightColor++;
+                }
+            }
+
+            clickCpt++;
+
+            if(rightColor == COLUMNS)
+            {
+                MessageBox.Show("Bravo le veau t'as gagné");
+            }
+
+            else if(clickCpt == 10)
+            {
+                MessageBox.Show($"Vous avez atteint le nombre maximal d'essais. La combinaison secrète était : {GetSecretCombination()}");
+                ResetGame();
+            }
+
             else
             {
-                MessageBox.Show("Minute papillon, la combinaison n'est pas correcte. Essayez à nouveau.");
-                
+                for(int i =0; i < COLUMNS; i++)
+                {
+                    misplacedColor += Math.Min(countColors[i], spotColors[i]);
+                }
+                misplacedColor -= rightColor;
+
+                for(int i = 0; i < COLUMNS; i++)
+                {
+                    if (i < rightColor)
+                    {
+                        hintGrid[currentRow, i].BackColor = Color.White;
+                    }
+
+                    else if(i >= rightColor && i < rightColor + misplacedColor)
+                    {
+                        hintGrid[currentRow, i].BackColor = Color.Black;
+                    }
+                    else
+                    {
+                        hintGrid[currentRow, i].BackColor = Color.Gray;
+                    }
+
+                }
+
+                currentRow++;
+            }
+        }   
+
+        private void ResetGame()
+        {
+            // Réinitialiser la grille et la combinaison du joueur
+            currentRow = 0;
+            currentColumn = 0;
+
+            foreach (Label lbl in lblGrid)
+            {
+                lbl.BackColor = Color.Gray;
             }
 
-            // reset
-             btnReset_Click(sender, e);
+            // Générer une nouvelle combinaison secrète
+            CombinationCreator();
         }
 
         private bool CheckPlayerCombination()
         {
-            // comparaison avec le code secret
-            for (int i = 0; i < 4; i++)
+            // Comparaison avec le code secret
+            for (int i = 0; i < COLUMNS; i++)
             {
-                if (selectedColors[i].BackColor != btnList[i].BackColor)
+                if (selectedColors[i].BackColor != lblGrid[currentRow, i].BackColor)
                 {
-                    return false; // si incorrect
+                    return false; // Si incorrect
                 }
             }
 
-            return true; //si correct
+            return true; // Si correct
         }
+
+        private string GetSecretCombination()
+        {
+            // Récupérer la combinaison secrète
+            StringBuilder secretCombination = new StringBuilder();
+
+            for (int i = 0; i < COLUMNS; i++)
+            {
+                secretCombination.Append(GetColorName(selectedColors[i].BackColor) + " ");
+            }
+
+            return secretCombination.ToString();
+        }
+
+        private string GetColorName(Color color)
+        {
+            // Convertir la couleur en nom (personnalisez cela en fonction de vos besoins)
+            if (color == Color.Green) return "Vert";
+            if (color == Color.Yellow) return "Jaune";
+            if (color == Color.White) return "Blanc";
+            if (color == Color.Red) return "Rouge";
+            if (color == Color.Blue) return "Bleu";
+            if (color == Color.Magenta) return "Magenta";
+            if (color == Color.Cyan) return "Cyan";
+
+            // au cas ou je rajoute des couleurs en plus
+            return "Inconnu";
+        }
+
     }
-       
 }
+
+       
 

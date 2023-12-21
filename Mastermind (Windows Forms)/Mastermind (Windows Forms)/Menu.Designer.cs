@@ -121,9 +121,9 @@
             this.tableLayoutPanel1.Controls.Add(this.btnRules, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnQuit, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnPlay, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblmenu, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblName, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
