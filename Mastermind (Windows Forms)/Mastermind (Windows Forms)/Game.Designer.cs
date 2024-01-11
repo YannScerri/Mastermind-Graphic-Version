@@ -61,10 +61,10 @@
             // 
             // availableColor2
             // 
-            this.availableColor2.BackColor = System.Drawing.Color.White;
+            this.availableColor2.BackColor = System.Drawing.Color.Yellow;
             this.availableColor2.FlatAppearance.BorderSize = 0;
             this.availableColor2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.availableColor2.ForeColor = System.Drawing.Color.White;
+            this.availableColor2.ForeColor = System.Drawing.Color.Transparent;
             this.availableColor2.Location = new System.Drawing.Point(639, 63);
             this.availableColor2.Name = "availableColor2";
             this.availableColor2.Size = new System.Drawing.Size(30, 30);
@@ -74,7 +74,7 @@
             // 
             // availableColor3
             // 
-            this.availableColor3.BackColor = System.Drawing.Color.Yellow;
+            this.availableColor3.BackColor = System.Drawing.Color.White;
             this.availableColor3.FlatAppearance.BorderSize = 0;
             this.availableColor3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.availableColor3.Location = new System.Drawing.Point(639, 119);

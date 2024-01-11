@@ -11,3 +11,15 @@ D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\De
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Menu.resources
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Rules.resources
 D:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Game.resources
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).exe.config
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).exe
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\bin\Debug\Mastermind (Windows Forms).pdb
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.AssemblyReference.cache
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Game.resources
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Menu.resources
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Rules.resources
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind__Windows_Forms_.Properties.Resources.resources
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.GenerateResource.cache
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).csproj.CoreCompileInputs.cache
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).exe
+E:\Mastermind suite\Mastermind (Windows Forms)\Mastermind (Windows Forms)\obj\Debug\Mastermind (Windows Forms).pdb
